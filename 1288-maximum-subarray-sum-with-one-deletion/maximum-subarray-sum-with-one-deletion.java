@@ -14,7 +14,6 @@ class Solution {
             res = Math.max(res, Math.max(v1, Math.max(v2, Math.max(v3, v4))));
             nopower = Math.max(v1, v2);
             power = Math.max(v3, v4);
-            System.out.println(res);
         }
         return res;
     }
