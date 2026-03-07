@@ -5,19 +5,15 @@ class Solution {
         if (arr[0] < arr[n - 1])
             return arr[0];
         if(n==1) return arr[0];
-        int res = 0;
-        while (start <= end) {
+        while (start < end) {
             int mid = start + (end - start) / 2;
-            if(arr[mid]>=arr[0]){
-                int max = Math.max(arr[res],arr[mid]);
-                res = arr[mid] == max ? mid : res;
+            if(arr[mid]>arr[end]){
                 start=mid+1;
             }else{
-                end = mid-1;
+                end = mid;
             }
             
         }
-        System.out.println(res);
-        return arr[(res + 1) % n];
+        return arr[start];
     }
 }
