@@ -1,8 +1,5 @@
 class Solution {
     public int binarySearch(int[] arr, int target,int pos) {
-        for(int i:arr){
-            System.out.print(i+"->");
-        }
         int n = arr.length;
         int start = 0, end = n - 1;
         while (start <= end) {
@@ -32,7 +29,6 @@ class Solution {
                 start = mid + 1;
             }
         }
-        System.out.println(start);
         if (target == arr[start])
             return start;
         if (target > arr[start]) {
