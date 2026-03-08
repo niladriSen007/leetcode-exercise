@@ -1,15 +1,15 @@
 class Solution {
-    public int binarySearch(int[] arr, int target,int pos) {
+    public int binarySearch(int[] arr, int target, int pos) {
         int n = arr.length;
         int start = 0, end = n - 1;
         while (start <= end) {
             int mid = start + (end - start) / 2;
             if (arr[mid] == target)
-                return mid+pos;
+                return mid + pos;
             else if (arr[mid] < target)
                 start = mid + 1;
             else
-                end = mid -1;
+                end = mid - 1;
         }
         return -1;
     }
@@ -32,10 +32,10 @@ class Solution {
         if (target == arr[start])
             return start;
         if (target > arr[start]) {
-            if (target <= arr[n-1]) {
-                return binarySearch(Arrays.copyOfRange(arr, start, n), target,start);
+            if (target <= arr[n - 1]) {
+                return binarySearch(Arrays.copyOfRange(arr, start, n), target, start);
             } else {
-                return binarySearch(Arrays.copyOfRange(arr, 0, start), target,0);
+                return binarySearch(Arrays.copyOfRange(arr, 0, start), target, 0);
             }
         }
         return -1;
