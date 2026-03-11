@@ -15,7 +15,7 @@ class Solution {
             for (int i = 0; i < n; i++) {
                 int rem = piles[i] / mid;
                 int mod = piles[i] % mid;
-                res = mod == 0 ? res + rem : res + rem + 1;
+                res += mod == 0 ? rem : rem + 1;
             }
             System.out.println("res->" + res);
             if (res > h) {
