@@ -3,9 +3,7 @@ class Solution {
     boolean isCapacity(int[] arr, int mid, int h) {
         int hours = 0;
         for (int item : arr) {
-            int div = item / mid;
-            int mod = item % mid;
-            hours += mod == 0 ? div : div + 1;
+            hours += (item+mid-1)/mid;
         }
         return hours <= h;
     }
