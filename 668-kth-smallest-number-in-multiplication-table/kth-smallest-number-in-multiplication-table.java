@@ -13,12 +13,12 @@ class Solution {
     }
     public int findKthNumber(int m, int n, int k) {
         int row = m,col = n;
-        int start = 1, end = row*col;
+        int start = 1, end = m*n;
         int res = -1;
         while(start<=end){
             int mid = start + (end-start)/2;
             System.out.println(mid);
-            if(isValid(row,col,mid,k)) {
+            if(isValid(m,n,mid,k)) {
                 res = mid;
                 end = mid -1;
             }else start = mid+1;
