@@ -16,7 +16,6 @@ class Solution {
         int res = -1;
         while(start<=end){
             int mid = start + (end-start)/2;
-            System.out.println(mid);
             if(isValid(m,n,mid,k)) {
                 res = mid;
                 end = mid -1;
