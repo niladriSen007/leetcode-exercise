@@ -12,7 +12,6 @@ class Solution {
         return count >= k;
     }
     public int findKthNumber(int m, int n, int k) {
-        int row = m,col = n;
         int start = 1, end = m*n;
         int res = -1;
         while(start<=end){
