@@ -11,10 +11,16 @@ class Pair {
 
 class Solution {
     public String reorganizeString(String s) {
-        Map<Character, Integer> freq = new HashMap<>();
+        // Map<Character, Integer> freq = new HashMap<>();
+        // for (char ch : s.toCharArray()) {
+        //     freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+        // }
+
+        int[] freq = new int[26];
         for (char ch : s.toCharArray()) {
-            freq.put(ch, freq.getOrDefault(ch, 0) + 1);
+            freq[ch - 'a']++;
         }
+
         // for(Map.Entry<Character,Integer> m:freq.entrySet()){
         //     System.out.println(m.getKey() + "----" + m.getValue());
         // }
@@ -24,8 +30,12 @@ class Solution {
                         return b.freq - a.freq;
                     return b.ch.compareTo(a.ch);
                 });
-        for (Map.Entry<Character, Integer> m : freq.entrySet()) {
-            maxHeap.add(new Pair(m.getValue(), m.getKey()));
+        // for (Map.Entry<Character, Integer> m : freq.entrySet()) {
+        //     maxHeap.add(new Pair(m.getValue(), m.getKey()));
+        // }
+        for (int i = 0; i < freq.length; i++) {
+            if (freq[i] > 0)
+                maxHeap.add(new Pair(freq[i], (char) (i+'a')));
         }
         StringBuilder res = new StringBuilder();
         int seat = 0;
