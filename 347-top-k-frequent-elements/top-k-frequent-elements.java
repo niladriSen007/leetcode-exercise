@@ -31,16 +31,15 @@ class Solution {
             }
         }
 
-        for (Pair p : pq) {
-    System.out.println(p.frequency + " : " + p.number);
-}
+        // for (Pair p : pq) {
+        //     System.out.println(p.frequency + " : " + p.number);
+        // }
 
-    int[] topK = new int[k];
+        int[] topK = new int[k];
         for (int i = 0; i < k; i++) {
             topK[i] = pq.poll().number;
         }
         return topK;
-
 
         // return null;
     }
