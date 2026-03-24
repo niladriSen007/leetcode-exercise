@@ -35,7 +35,7 @@ class Solution {
         // }
         for (int i = 0; i < freq.length; i++) {
             if (freq[i] > 0)
-                maxHeap.add(new Pair(freq[i], (char) (i+97)));
+                maxHeap.add(new Pair(freq[i], (char) (i + 97)));
         }
         StringBuilder res = new StringBuilder();
         int seat = 0;
