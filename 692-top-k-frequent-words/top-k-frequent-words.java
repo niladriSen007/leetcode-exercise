@@ -26,9 +26,9 @@ class Solution {
                 minHeap.poll();
             }
         }
-                for (Pair p : minHeap) {
-            System.out.println(p.frequency + " : " + p.word);
-        }
+        //         for (Pair p : minHeap) {
+        //     System.out.println(p.frequency + " : " + p.word);
+        // }
         List<String> topK = new ArrayList<>();
         for(int i=0;i<k;i++){
             topK.add(minHeap.poll().word);
