@@ -14,7 +14,7 @@ class Solution {
         PriorityQueue<ListNode> minHeap = new PriorityQueue<>((a, b) -> a.val - b.val);
         for (ListNode list : lists) {
             if (list != null)
-                minHeap.add(list);
+                minHeap.offer(list);
         }
         ListNode dummy = new ListNode(0);
         ListNode curr = dummy;
