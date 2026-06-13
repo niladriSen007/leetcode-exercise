@@ -8,13 +8,13 @@ class Solution {
         return true;
     }
 
-    void dfs(char[][] grid, int row, int col, int currentRow, int currentCol, boolean[][] visited) {
+    void dfs(char[][] grid, int rowCount, int colCount, int currentRow, int currentCol, boolean[][] visited) {
         visited[currentRow][currentCol] = true;
-        for (int k = 0; k < 4; k++) {
-            int r = currentRow + x[k]; // up , down, left , right
-            int c = currentCol + y[k];
-            if (isValid(r, c, row, col) && grid[r][c] == '1' && !visited[r][c]) {
-                dfs(grid, row, col, r, c, visited);
+        for (int direction = 0; direction < 4; direction++) {
+            int row = currentRow + x[direction]; // up , down, left , right
+            int column = currentCol + y[direction];
+            if (isValid(row, column, rowCount, colCount) && grid[row][column] == '1' && !visited[row][column]) {
+                dfs(grid, rowCount, colCount, row, column, visited);
             }
         }
         return;
@@ -22,18 +22,18 @@ class Solution {
     }
 
     public int numIslands(char[][] grid) {
-        int row = grid.length;
-        int col = grid[0].length;
-        int res = 0;
-        boolean[][] visited = new boolean[row][col];
-        for (int i = 0; i < row; i++) {
-            for (int j = 0; j < col; j++) {
+        int rowCount = grid.length;
+        int colCount = grid[0].length;
+        int result = 0;
+        boolean[][] visited = new boolean[rowCount][colCount];
+        for (int i = 0; i < rowCount; i++) {
+            for (int j = 0; j < colCount; j++) {
                 if (grid[i][j] == '1' && !visited[i][j]) {
-                    dfs(grid, row, col, i, j, visited);
-                    res++;
+                    dfs(grid, rowCount, colCount, i, j, visited);
+                    result++;
                 }
             }
         }
-        return res;
+        return result;
     }
 }
