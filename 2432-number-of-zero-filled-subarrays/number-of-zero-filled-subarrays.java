@@ -1,20 +1,16 @@
 class Solution {
     public long zeroFilledSubarray(int[] nums) {
         int n = nums.length;
-         long count = 0;
-        int consecutiveZeros = 0;
-
-        for (int num : nums) {
-            if (num == 0) {
-                consecutiveZeros++;
+        long res = 0, count = 0;
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == 0) {
+                count += 1;
             } else {
-                consecutiveZeros = 0;
+                count = 0;
             }
-            // Each new zero in a run of length k adds k new subarrays
-            count += consecutiveZeros;
+            res += count;
         }
-
-        return count;
+        return res;
 
         // int res =0,count=0;
         // for(int num:nums){
