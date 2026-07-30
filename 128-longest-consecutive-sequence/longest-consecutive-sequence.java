@@ -7,9 +7,7 @@ class Solution {
             set.add(num);
         }
         for (int num : set) {
-            if (set.contains(num - 1))
-                continue;
-            else {
+            if (!set.contains(num - 1)){
                 int streak = 1;
                 while (set.contains(num + 1)) {
                     num++;
